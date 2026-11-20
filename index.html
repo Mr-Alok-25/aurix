@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- keeps this page out of Google search, so only people you send the link to find it -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050404">
+<title>AURIX - Feel beyond sound</title>
+<style>
+  :root { --bg:#050404; --s1:#12100e; --s2:#211c18; --text:#f6efe8; --sub:#a99c91; --amber:#f5a65b; --copper:#8a5a2b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+         line-height: 1.55; min-height: 100vh; overflow-x: hidden; }
+  /* moving lights in the background */
+  .glow { position: fixed; border-radius: 50%; filter: blur(80px); z-index: -1; opacity: .5; }
+  .g1 { width: 420px; height: 420px; background: #f5a65b33; top: -120px; left: -100px; animation: d1 16s ease-in-out infinite alternate; }
+  .g2 { width: 380px; height: 380px; background: #8a5a2b44; bottom: -120px; right: -100px; animation: d2 19s ease-in-out infinite alternate; }
+  @keyframes d1 { to { transform: translate(60vw, 30vh); } }
+  @keyframes d2 { to { transform: translate(-55vw, -25vh); } }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 20px 60px; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo svg { width: 44px; height: 44px; }
+  .logo b { font-size: 26px; font-weight: 300; letter-spacing: 8px; color: var(--amber); }
+  .logo small { display: block; font-size: 9px; letter-spacing: 3px; color: var(--text); }
+  h1 { font-size: clamp(30px, 7vw, 46px); margin: 36px 0 10px; line-height: 1.15; }
+  h1 span { color: var(--amber); }
+  .lead { color: var(--sub); font-size: 17px; max-width: 520px; }
+  .card { background: var(--s1); border: 1px solid #8a5a2b66; border-radius: 22px; padding: 22px; margin-top: 28px; }
+  .btn { display: inline-block; background: linear-gradient(135deg, #ffcf99, #f5a65b, #c97a2b); color: #1a1008; font-weight: 700;
+         text-decoration: none; padding: 15px 28px; border-radius: 999px; font-size: 17px; border: 0; cursor: pointer; }
+  .btn.ghost { background: transparent; color: var(--text); border: 1px solid #8a5a2baa; font-weight: 500; margin-left: 8px; }
+  .meta { color: var(--sub); font-size: 14px; margin-top: 12px; }
+  .notes { margin-top: 10px; font-size: 14px; color: var(--sub); }
+  h2 { font-size: 20px; margin: 38px 0 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .f { background: var(--s1); border: 1px solid #8a5a2b44; border-radius: 16px; padding: 14px 16px; font-size: 15px; }
+  .f b { color: var(--amber); display: block; margin-bottom: 2px; }
+  ol { padding-left: 22px; color: var(--sub); }
+  ol li { margin-bottom: 10px; }
+  ol li b { color: var(--text); }
+  details { background: var(--s1); border: 1px solid #8a5a2b44; border-radius: 14px; padding: 12px 16px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--sub); margin-top: 8px; font-size: 15px; }
+  footer { margin-top: 44px; color: var(--sub); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="wrap">
+  <div class="logo">
+    <svg viewBox="0 0 44 44" fill="none" stroke="#f5a65b" stroke-width="2.4" stroke-linejoin="round">
+      <path d="M22 4 L41 39 L3 39 Z"/><path d="M13 30 H31"/>
+    </svg>
+    <div><b>AURIX</b><small>FEEL BEYOND SOUND</small></div>
+  </div>
+
+  <h1>A music player that feels <span>alive</span>.</h1>
+  <p class="lead">Search any song, keep a smart queue, read synced lyrics, shape the sound with a clean equalizer. Made for Android.</p>
+
+  <div class="card">
+    <a class="btn" data-apk href="#">Download for Android</a>
+    <button class="btn ghost" id="share" type="button">Share</button>
+    <p class="meta" id="ver">Android 8.0 or newer</p>
+    <p class="notes" id="notes"></p>
+  </div>
+
+  <h2>What you get</h2>
+  <div class="grid">
+    <div class="f"><b>Smart queue</b>Similar songs keep coming. Add your own songs on top.</div>
+    <div class="f"><b>Synced lyrics</b>Lyrics move with the song, with a sync fix if you need it.</div>
+    <div class="f"><b>Clean equalizer</b>Pop, Melody, Speaker and more, picked for each song.</div>
+    <div class="f"><b>Background play</b>Notification controls, sleep timer and speed.</div>
+    <div class="f"><b>Backup</b>Save your favourites and playlists to a file.</div>
+    <div class="f"><b>Updates</b>The app tells you when a new version is ready.</div>
+  </div>
+
+  <h2>How to install</h2>
+  <ol>
+    <li><b>Tap Download</b> and wait for the file <b>aurix.apk</b>.</li>
+    <li>Open the downloaded file. If Android asks, <b>allow your browser to install apps</b> (Settings > Install unknown apps).</li>
+    <li>Tap <b>Install</b>. If Play Protect warns about an unknown developer, choose <b>Install anyway</b>.</li>
+  </ol>
+
+  <h2>Questions</h2>
+  <details><summary>Why does Android show a warning?</summary>
+    <p>AURIX is not on the Play Store, so Android shows its normal warning for apps installed from a file.</p></details>
+  <details><summary>How do I update?</summary>
+    <p>Open the app. If a new version is out, it asks you to update. Tap Update, then open the downloaded file. Your favourites and playlists stay.</p></details>
+  <details><summary>What does the app collect?</summary>
+    <p>Only anonymous usage counts (screens opened, minutes of music). It never records song names or what you search. You can turn it off in Profile > Privacy &amp; Security.</p></details>
+  <details><summary>iPhone or computer?</summary>
+    <p>Android only.</p></details>
+
+  <footer>AURIX is a personal project by Alok Kumar.</footer>
+</div>
+
+<script>
+(function () {
+  // On GitHub Pages the download link is built from this page's address.
+  // To use another link, put it between the quotes below.
+  var OVERRIDE_APK = "";
+  var host = location.hostname;
+  var parts = location.pathname.split("/").filter(Boolean);
+  var user = host.endsWith(".github.io") ? host.split(".")[0] : "";
+  var repo = parts[0] || "";
+  var apk = OVERRIDE_APK || (user && repo
+      ? "https://github.com/" + user + "/" + repo + "/releases/latest/download/aurix.apk" : "#");
+  document.querySelectorAll("[data-apk]").forEach(function (a) { a.href = apk; });
+
+  fetch("version.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (v) {
+    if (v.versionName) document.getElementById("ver").textContent = "Version " + v.versionName + "  ·  Android 8.0 or newer";
+    if (v.notes) document.getElementById("notes").textContent = v.notes;
+  }).catch(function () {});
+
+  document.getElementById("share").addEventListener("click", function () {
+    var data = { title: "AURIX", text: "Try AURIX, a music player for Android", url: location.href };
+    if (navigator.share) { navigator.share(data).catch(function () {}); }
+    else if (navigator.clipboard) { navigator.clipboard.writeText(location.href); this.textContent = "Link copied"; }
+  });
+})();
+</script>
+</body>
+</html>
