@@ -44,6 +44,7 @@
   summary { cursor: pointer; font-weight: 600; }
   details p { color: var(--sub); margin-top: 8px; font-size: 15px; }
   footer { margin-top: 44px; color: var(--sub); font-size: 13px; text-align: center; }
+  footer a { color: var(--amber); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -69,7 +70,7 @@
   <h2>What you get</h2>
   <div class="grid">
     <div class="f"><b>Smart queue</b>Similar songs keep coming. Add your own songs on top.</div>
-    <div class="f"><b>Synced lyrics</b>Lyrics move with the song, with a sync fix if you need it.</div>
+    <div class="f"><b>Synced lyrics</b>Lyrics move with the song. Tap a line to sync.</div>
     <div class="f"><b>Clean equalizer</b>Pop, Melody, Speaker and more, picked for each song.</div>
     <div class="f"><b>Background play</b>Notification controls, sleep timer and speed.</div>
     <div class="f"><b>Backup</b>Save your favourites and playlists to a file.</div>
@@ -87,19 +88,19 @@
   <details><summary>Why does Android show a warning?</summary>
     <p>AURIX is not on the Play Store, so Android shows its normal warning for apps installed from a file.</p></details>
   <details><summary>How do I update?</summary>
-    <p>Open the app. If a new version is out, it asks you to update. Tap Update, then open the downloaded file. Your favourites and playlists stay.</p></details>
+    <p>Open the app. If a new version is out, it asks you to update. You can also use Profile > Check for updates. Tap Update, then open the downloaded file. Your favourites and playlists stay.</p></details>
   <details><summary>What does the app collect?</summary>
-    <p>Only anonymous usage counts (screens opened, minutes of music). It never records song names or what you search. You can turn it off in Profile > Privacy &amp; Security.</p></details>
+    <p>Only anonymous usage counts (screens opened, minutes of music) and crash reports. It never records song names or what you search. You can turn it off in Profile > Privacy &amp; Security.</p></details>
   <details><summary>iPhone or computer?</summary>
     <p>Android only.</p></details>
 
-  <footer>AURIX is a personal project by Alok Kumar.</footer>
+  <footer>AURIX is a personal project by Alok Kumar &middot; <a id="gh" href="#" target="_blank" rel="noopener">GitHub</a></footer>
 </div>
 
 <script>
 (function () {
-  // On GitHub Pages the download link is built from this page's address.
-  // To use another link, put it between the quotes below.
+  // On GitHub Pages the links are built from this page's address.
+  // To use another download link, put it between the quotes below.
   var OVERRIDE_APK = "";
   var host = location.hostname;
   var parts = location.pathname.split("/").filter(Boolean);
@@ -108,6 +109,10 @@
   var apk = OVERRIDE_APK || (user && repo
       ? "https://github.com/" + user + "/" + repo + "/releases/latest/download/aurix.apk" : "#");
   document.querySelectorAll("[data-apk]").forEach(function (a) { a.href = apk; });
+
+  var gh = document.getElementById("gh");
+  if (user) { gh.href = "https://github.com/" + user; gh.textContent = "GitHub @" + user; }
+  else { gh.style.display = "none"; }
 
   fetch("version.json?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (v) {
     if (v.versionName) document.getElementById("ver").textContent = "Version " + v.versionName + "  ·  Android 8.0 or newer";
