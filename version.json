@@ -1,7 +1,7 @@
 {
-  "versionCode": 2,
-  "versionName": "1.1",
-  "notes": "New Devotional and Punjabi moods, plus 3 new mixes: Acoustic Unplugged, Monsoon Magic and Weekend Vibes.",
-  "apkUrl": "https://github.com/Mr-Alok-25/aurix/releases/download/v1.1/app-release.apk",
+  "versionCode": 3,
+  "versionName": "1.2",
+  "notes": "Big update: new search with suggestions and long songs, a stronger equalizer, songs saved for instant replay, save your queue as a playlist, tap-to-sync lyrics, share AURIX with a QR code, and many fixes.",
+  "apkUrl": "",
   "force": false
 }
